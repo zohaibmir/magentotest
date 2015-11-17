@@ -1,3 +1,10 @@
 <?php
-        echo 'Hello World ! I am a Magento Guy..' . $this->myfunction();
-?>
+echo 'Hello World ! I am a Magento Guy..';
+$products = $this->getProducts();
+foreach ($products as $_product) {
+    ?>
+
+    <a href="<?php echo $_product->getProductUrl() ?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200); ?>" width="200" height="200" alt="" /></a> <a href="<?php echo $_product->getProductUrl(); ?>"><?php echo $_product->getName(); ?></a>
+
+<?php } ?>
+
