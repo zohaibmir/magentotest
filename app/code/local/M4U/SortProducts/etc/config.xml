@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <modules>
+            <m4u_sortproducts>
+                <version>0.1.0</version>
+            </m4u_sortproducts>
+        </modules>
+        <blocks>
+            <sortproducts>
+                <rewrite>
+                    <sortproducts>M4U_SortProducts_Block_SortProducts</sortproducts>
+                </rewrite>
+            </sortproducts>
+        </blocks>
+ 
+    </global>
+    <frontend>
+        <routers>
+            <sortproducts>
+                <use>standard</use>
+                <args>
+                    <module>M4U_SortProducts</module>
+                    <frontName>sortproducts</frontName>
+                </args>
+            </sortproducts>
+        </routers>
+        <layout>
+            <updates>
+                <sortproducts>
+                    <file>sortproducts.xml</file>
+                </sortproducts>
+            </updates>
+        </layout>
+    </frontend>
+</config>
