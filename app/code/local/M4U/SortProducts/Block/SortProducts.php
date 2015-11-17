@@ -11,7 +11,12 @@
  *
  * @author Zohaib
  */
-
 class M4U_SortProducts_Block_SortProducts extends Mage_Core_Block_Template {
+
     // necessary methods
+
+    public function myfunction() {
+        return "Hello from Block Function";
+    }
+
 }

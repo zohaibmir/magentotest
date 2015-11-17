@@ -19,4 +19,8 @@ class M4U_SortProducts_IndexController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
+    public function testAction() {
+        echo 'Testing Module Controller';
+    }
+
 }
