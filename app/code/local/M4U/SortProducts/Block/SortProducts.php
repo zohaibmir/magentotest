@@ -36,14 +36,14 @@ class M4U_SortProducts_Block_SortProducts extends Mage_Core_Block_Template {
      * Output: Product Collection
      */
 
-    public function getProductsByCategoryId($categoryid = 4) {
+    public function getProductsByCategoryId($direction = 'asc',$categoryid = 4) {
 
         $category = new Mage_Catalog_Model_Category();
         $category->load($categoryid);
         $collection = $category->getProductCollection();
         $collection->addAttributeToSelect('*');
         $collection->addAttributeToFilter('sort_order', array('neq' => ''));
-        $collection->setOrder('sort_order', 'asc');
+        $collection->setOrder('sort_order', $direction);
         return $collection;
     }
 

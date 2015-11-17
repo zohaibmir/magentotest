@@ -10,7 +10,7 @@ if(isset($_GET['dir'])) {
 
 
 $products = $this->getAllProducts($direction);
-//$products = $this->getProductsByCategoryId();
+//$products = $this->getProductsByCategoryId($direction);
 
 foreach ($products as $_product) {
     ?>
