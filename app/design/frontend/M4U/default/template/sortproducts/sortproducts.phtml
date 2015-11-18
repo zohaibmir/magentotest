@@ -1,3 +1,37 @@
+<h1>Sorted Products</h1>
 <?php
-        echo 'Hello World ! I am a Magento Guy..'
-?>
+$direction = 'asc';
+$sortDirection = 'desc';
+
+if(isset($_GET['dir'])) {
+    $direction = $_GET['dir'];
+    $sortDirection =  ($direction ==  'asc' ? 'desc' : 'asc');
+}
+
+
+$products = $this->getAllProducts($direction);
+//$products = $this->getProductsByCategoryId($direction);
+
+foreach ($products as $_product) {
+    ?>
+    <div>
+        <a href="<?php echo $_product->getProductUrl(); ?>">
+            <?php echo $_product->getName(); ?>
+        </a>
+        <br />
+        <a href="<?php echo $_product->getProductUrl() ?>">        
+            <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200); ?>" width="200" height="200" alt="" />
+        </a>   
+    </div>
+
+<?php } ?>
+
+
+<br />
+<form name="sortProducts" method="get">
+    <input type="hidden" name="dir" id="dir" value="<?php echo $sortDirection ?>">
+    <div>
+        <button type="submit" style="display: block;width: 100%">Update Sorting</button>
+    </div>
+</form>
+
